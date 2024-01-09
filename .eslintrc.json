@@ -1,0 +1,31 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+        // "SKIP_PREFLIGHT_CHECK":true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off", // Отключить проверку на React в JSX
+        "no-undef": "off", // Отключить проверку на неопределенные переменные
+        "no-extra-semi": "error", // Показать ошибку при наличии лишних точек с запятой
+        "no-unused-vars": "error" // Показать ошибку при наличии неиспользуемых переменных
+        // "no-empty-function": 
+    }
+}
