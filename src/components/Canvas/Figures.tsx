@@ -48,7 +48,7 @@ function mapStateToProps(state: RootState) {
 }
 
 const mapDispatchToProps = () => {
-  return {};
+  return {}; 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Figures);
