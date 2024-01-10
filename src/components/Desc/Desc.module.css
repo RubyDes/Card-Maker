@@ -1,83 +1,75 @@
-.desc
-{
-    width: 100%;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-}
-.desc_art 
-{
-    width: 100%;
-    padding: 30px 20px;
-    /* margin-top: 300px; */
-    display: flex;
-    flex-direction: column;
-    /* background-color: black; */
-    border-radius: 10px;
+.desc {
+  width: 100%;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.title
-{
-    color: rgb(211, 201, 201);
-    margin: 0 0 20px 0;
-    font: 600 22px "Poppins";
-    letter-spacing: 3px;
+.desc_art {
+  width: 100%;
+  padding: 30px 20px;
+
+  /* margin-top: 300px; */
+  display: flex;
+  flex-direction: column;
+
+  /* background-color: black; */
+  border-radius: 10px;
 }
 
-.button
-{
-    font: 500 18px "Poppins";
-    width: 100%;
-    height: 40px;
-    border-radius: 0px;
-    background-color: white;
-    margin-bottom: 20px;
-    cursor: pointer;
+.title {
+  color: rgb(211 201 201);
+  margin: 0 0 20px;
+  font: 600 22px Poppins;
+  letter-spacing: 3px;
 }
 
-.label
-{
-    color: rgb(211, 201, 201);
-    margin-bottom: 10px;
+.button {
+  font: 500 18px Poppins;
+  width: 100%;
+  height: 40px;
+  border-radius: 0;
+  background-color: white;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-.select
-{
-    margin-bottom: 20px;
-    background: rgb(211, 201, 201);
+.label {
+  color: rgb(211 201 201);
+  margin-bottom: 10px;
 }
 
-.select option
-{
-    background: rgb(211, 201, 201);
+.select {
+  margin-bottom: 20px;
+  background: rgb(211 201 201);
 }
 
-.greeting
-{
-    position: absolute;
-    padding: 0 36px;
-    color: #b7b9b9;
-    text-align: center;
-    font-size: 25px;
-    line-height: 60px;
-    top: 50%;
-    transform: translate(0, -50%);
+.select option {
+  background: rgb(211 201 201);
 }
 
-.greeting span
-{
-    color: red;
-    font-size: 50px;
+.greeting {
+  position: absolute;
+  padding: 0 36px;
+  color: #b7b9b9;
+  text-align: center;
+  font-size: 25px;
+  line-height: 60px;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
-.input
-{
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: rgb(212, 208, 208);
+.greeting span {
+  color: red;
+  font-size: 50px;
 }
 
-.inputColor
-{
-    margin-bottom: 30px;
+.input {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  background-color: rgb(212 208 208);
+}
+
+.inputColor {
+  margin-bottom: 30px;
 }

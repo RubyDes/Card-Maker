@@ -1,31 +1,37 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-        // "SKIP_PREFLIGHT_CHECK":true
+  "env": {
+    "browser": true,
+    "es2021": true
+    // "SKIP_PREFLIGHT_CHECK":true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended"
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": 
+    [
+      "react", 
+      "prettier",
+      "@typescript-eslint"
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "react/react-in-jsx-scope": "off", // Отключить проверку на React в JSX
-        "no-undef": "off", // Отключить проверку на неопределенные переменные
-        "no-extra-semi": "error", // Показать ошибку при наличии лишних точек с запятой
-        "no-unused-vars": "error" // Показать ошибку при наличии неиспользуемых переменных
-        // "no-empty-function": 
-    }
+  "rules": {
+    "react/react-in-jsx-scope": "off", // Отключить проверку на React в JSX
+    "no-undef": "off", // Отключить проверку на неопределенные переменные
+    "no-extra-semi": "error", // Показать ошибку при наличии лишних точек с запятой
+    "no-unused-vars": "error", // Показать ошибку при наличии неиспользуемых переменных
+    "prettier/prettier": "error"
+    // "no-empty-function":
+  }
 }

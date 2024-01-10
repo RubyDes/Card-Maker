@@ -3,14 +3,14 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, RefObject } from "react";
 type positionType = {
-  x: number,
-  y: number
-}
+  x: number;
+  y: number;
+};
 
 type sizeType = {
-  width: number,
-  height: number
-}
+  width: number;
+  height: number;
+};
 
 export function useResize(
   resizeBlock: (index: number, width: number, height: number) => void,
@@ -25,12 +25,10 @@ export function useResize(
   modelSize: sizeType,
   indexItem: number,
 ): void {
-
   useEffect(() => {
+    const currentExternalBlock: HTMLElement | null = itemBlock.current; // внешний блок
 
-    const currentExternalBlock: HTMLElement | null = itemBlock.current;  // внешний блок
-
-    const currentNestedBlock: HTMLElement | null = item.current;  // картинка
+    const currentNestedBlock: HTMLElement | null = item.current; // картинка
     const pointLT: HTMLElement | null = LeftTop.current;
     const pointRT: HTMLElement | null = RightTop.current;
     const pointLB: HTMLElement | null = LeftBottom.current;
@@ -43,7 +41,7 @@ export function useResize(
       e.preventDefault();
       startPos = {
         x: e.pageX,
-        y: e.pageY
+        y: e.pageY,
       };
 
       document.addEventListener("mousemove", handleMouseMove);
@@ -64,7 +62,7 @@ export function useResize(
       const delta: positionType = {
         x: e.pageX - startPos.x,
         y: e.pageY - startPos.y,
-      }
+      };
 
       switch (e.target) {
         case pointRB:
@@ -73,14 +71,18 @@ export function useResize(
           newPos = {
             x: currPos.x,
             y: currPos.y,
-          }
+          };
           if (newWidth > MIN_SIZE_BLOCK) {
-            if (currentNestedBlock != null) currentNestedBlock.style.width = `${newWidth}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.width = `${newWidth}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.width = `${newWidth}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.width = `${newWidth}px`;
           }
           if (newHeight > MIN_SIZE_BLOCK) {
-            if (currentNestedBlock != null) currentNestedBlock.style.height = `${newHeight}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.height = `${newHeight}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.height = `${newHeight}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.height = `${newHeight}px`;
           }
           break;
         case pointLB:
@@ -89,16 +91,22 @@ export function useResize(
           newPos = {
             x: currPos.x + delta.x,
             y: currPos.y,
-          }
+          };
           if (newHeight > MIN_SIZE_BLOCK)
-            if (currentNestedBlock != null) currentNestedBlock.style.height = `${newHeight}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.height = `${newHeight}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.height = `${newHeight}px`;
+          if (currentExternalBlock != null)
+            currentExternalBlock.style.height = `${newHeight}px`;
           if (newWidth > MIN_SIZE_BLOCK) {
-            if (currentNestedBlock != null) currentNestedBlock.style.width = `${newWidth}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.width = `${newWidth}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.width = `${newWidth}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.width = `${newWidth}px`;
 
-            if (currentNestedBlock != null) currentNestedBlock.style.left = `${newPos.x}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.left = `${newPos.x}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.left = `${newPos.x}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.left = `${newPos.x}px`;
           }
           break;
         case pointRT:
@@ -107,17 +115,22 @@ export function useResize(
           newPos = {
             x: currPos.x,
             y: currPos.y + delta.y,
-          }
-          if (newWidth > MIN_SIZE_BLOCK) 
-            if (currentNestedBlock != null) currentNestedBlock.style.width = `${newWidth}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.width = `${newWidth}px`;
+          };
+          if (newWidth > MIN_SIZE_BLOCK)
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.width = `${newWidth}px`;
+          if (currentExternalBlock != null)
+            currentExternalBlock.style.width = `${newWidth}px`;
           if (newHeight > MIN_SIZE_BLOCK) {
-            if (currentExternalBlock != null) currentExternalBlock.style.height = `${newHeight}px`;
-            if (currentNestedBlock != null) currentNestedBlock.style.height = `${newHeight}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.height = `${newHeight}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.height = `${newHeight}px`;
 
-            if (currentExternalBlock != null) currentExternalBlock.style.top = `${newPos.y}px`;
-            if (currentNestedBlock != null) currentNestedBlock.style.top = `${newPos.y}px`;
-
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.top = `${newPos.y}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.top = `${newPos.y}px`;
           }
           break;
         case pointLT:
@@ -126,26 +139,34 @@ export function useResize(
           newPos = {
             x: currPos.x + delta.x,
             y: currPos.y + delta.y,
-          }
+          };
           if (newWidth > MIN_SIZE_BLOCK) {
-            if (currentNestedBlock != null) currentNestedBlock.style.width = `${newWidth}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.width = `${newWidth}px`;
-            if (currentNestedBlock != null) currentNestedBlock.style.left = `${newPos.x}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.left = `${newPos.x}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.width = `${newWidth}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.width = `${newWidth}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.left = `${newPos.x}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.left = `${newPos.x}px`;
           }
           if (newHeight > MIN_SIZE_BLOCK) {
-            if (currentNestedBlock != null) currentNestedBlock.style.height = `${newHeight}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.height = `${newHeight}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.height = `${newHeight}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.height = `${newHeight}px`;
 
-            if (currentNestedBlock != null) currentNestedBlock.style.top = `${newPos.y}px`;
-            if (currentExternalBlock != null) currentExternalBlock.style.top = `${newPos.y}px`;
+            if (currentNestedBlock != null)
+              currentNestedBlock.style.top = `${newPos.y}px`;
+            if (currentExternalBlock != null)
+              currentExternalBlock.style.top = `${newPos.y}px`;
           }
           break;
       }
     }
 
     function handleMouseUp(): void {
-      const newSize: sizeType = { width: newWidth, height: newHeight }
+      const newSize: sizeType = { width: newWidth, height: newHeight };
       resizeBlock(indexItem, newSize.width, newSize.height);
       if (newPos) setPosition(indexItem, newPos.x, newPos.y);
       document.removeEventListener("mousemove", handleMouseMove);
@@ -162,5 +183,17 @@ export function useResize(
       if (pointLB) pointLB.removeEventListener("mousedown", handleMousedown);
       if (pointRB) pointRB.removeEventListener("mousedown", handleMousedown);
     };
-  }, [resizeBlock, setPosition, LeftTop, RightTop, LeftBottom, RightBottom, itemBlock, item, indexItem, modelPos, modelSize]);
+  }, [
+    resizeBlock,
+    setPosition,
+    LeftTop,
+    RightTop,
+    LeftBottom,
+    RightBottom,
+    itemBlock,
+    item,
+    indexItem,
+    modelPos,
+    modelSize,
+  ]);
 }
